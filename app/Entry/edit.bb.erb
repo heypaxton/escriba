@@ -1,0 +1,39 @@
+<div id="pageTitle">
+		<h1>Edit <%= @entry.title%></h1>
+</div>
+
+<div id="toolbar">
+    <%= link_to "Back", :action => :show, :id => @entry.object %>
+    <%= link_to "Delete", :action => :delete, :id => @entry.object %>
+</div>
+
+
+<div id="content">
+    <form method="POST" action="<%= url_for :action => :update %>">
+    	<input type="hidden" name="id" value="<%= @entry.object %>"/>
+            <table>
+        		
+                    <tr>
+            			<td class="itemLabel">Title: </td>
+              			<td class="itemValue"><input type="text" name="entry[title]" value="<%= @entry.title %>"/></td>
+          		    </tr>
+        		
+                    <tr>
+            			<td class="itemLabel">Body: </td>
+              			<td class="itemValue"><input type="text" name="entry[body]" value="<%= @entry.body %>"/></td>
+          		    </tr>
+        		
+                    <tr>
+            			<td class="itemLabel">Photo uri: </td>
+              			<td class="itemValue"><input type="text" name="entry[photo_uri]" value="<%= @entry.photo_uri %>"/></td>
+          		    </tr>
+        		
+                    <tr>
+            			<td class="itemLabel">Datetime: </td>
+              			<td class="itemValue"><input type="text" name="entry[datetime]" value="<%= @entry.datetime %>"/></td>
+          		    </tr>
+        		
+            </table>
+            <input type="submit" class="standardButton" value="Update" />
+    </form>
+</div>

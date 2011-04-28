@@ -1,0 +1,21 @@
+<div class="pageTitle">
+  
+</div>
+
+<div class="toolbar">
+  
+</div>
+
+<div class="content">
+  <ul>
+    <% @entries.each do |entry| %>
+    
+        <li>
+          <a href="<%= url_for :action => :show, :id => entry.object %>">
+            <span class="title"><%= entry.title %></span><span class="disclosure_indicator"></span>
+          </a>
+        </li>
+    
+    <% end %>
+  </ul>
+</div>

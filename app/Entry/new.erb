@@ -1,0 +1,43 @@
+<div class="pageTitle">
+  <h1>New <%= @entry.title %></h1>
+</div>
+
+<div class="toolbar">
+  <div class="leftItem backButton">
+    <a class="cancel" href="<%= url_for :action => :index %>">Cancel</a>
+  </div>
+</div>
+
+<div class="content">
+  <form method="POST" action="<%= url_for :action => :create %>">
+    <input type="hidden" name="id" value="<%= @entry.object %>"/>
+    <ul>
+      
+          <li>
+            <label for="entry[title]" class="fieldLabel">Title</label>
+            <input type="text" name="entry[title]" <%=
+            placeholder("Title") %> />
+          </li>
+      
+          <li>
+            <label for="entry[body]" class="fieldLabel">Body</label>
+            <input type="text" name="entry[body]" <%=
+            placeholder("Body") %> />
+          </li>
+      
+          <li>
+            <label for="entry[photo_uri]" class="fieldLabel">Photo uri</label>
+            <input type="text" name="entry[photo_uri]" <%=
+            placeholder("Photo uri") %> />
+          </li>
+      
+          <li>
+            <label for="entry[datetime]" class="fieldLabel">Datetime</label>
+            <input type="text" name="entry[datetime]" <%=
+            placeholder("Datetime") %> />
+          </li>
+      
+    </ul>
+    <input type="submit" class="standardButton" value="Create"/>
+  </form>
+</div>

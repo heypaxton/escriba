@@ -1,0 +1,42 @@
+<div class="pageTitle">
+  <h1>Edit <%= @entry.title %></h1>
+</div>
+
+<div class="toolbar">
+  <div class="leftItem backButton">
+    <a href="<%= url_for :action => :show, :id => @entry.object %>">Cancel</a>
+  </div>
+  <div class="rightItem regularButton">
+    <a class="button" href="<%= url_for :action => :delete, :id => @entry.object %>">Delete</a>
+  </div>
+</div>
+
+<div class="content">
+  <form method="POST" action="<%= url_for :action => :update %>">
+    <input type="hidden" name="id" value="<%= @entry.object %>"/>
+    <ul>
+      
+          <li>
+            <label for="entry[title]" class="fieldLabel">Title</label>
+            <input type="text" name="entry[title]" value="<%= @entry.title %>" <%= placeholder( "Title" ) %> />
+          </li>
+      
+          <li>
+            <label for="entry[body]" class="fieldLabel">Body</label>
+            <input type="text" name="entry[body]" value="<%= @entry.body %>" <%= placeholder( "Body" ) %> />
+          </li>
+      
+          <li>
+            <label for="entry[photo_uri]" class="fieldLabel">Photo uri</label>
+            <input type="text" name="entry[photo_uri]" value="<%= @entry.photo_uri %>" <%= placeholder( "Photo uri" ) %> />
+          </li>
+      
+          <li>
+            <label for="entry[datetime]" class="fieldLabel">Datetime</label>
+            <input type="text" name="entry[datetime]" value="<%= @entry.datetime %>" <%= placeholder( "Datetime" ) %> />
+          </li>
+      
+    </ul>
+    <input type="submit" class="standardButton" value="Update"/>
+  </form>
+</div>
