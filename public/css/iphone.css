@@ -34,7 +34,7 @@ a {
 
 body {
     margin: 0;
-    font-family: Helvetica;
+    font-family: Verdana;
 }
 
 h1 {
@@ -181,13 +181,13 @@ h1 {
 /* lists */
 
 .content ul {
-    border-top: 1px solid #848284;
     background-color: white;
     margin-bottom: 50px;
 }
 
 .content ul li {
-    border-bottom: 1px solid #848284;
+    border-bottom: 2px dotted #C0C9C8;
+    background: #F4F5EF;
     min-height: 40px;
 }
 
@@ -197,7 +197,7 @@ h1 {
     font-size: 20px;
     height: 100%;
     width: 100%;
-    padding: 15px 0 15px 0;
+    height: 44px;
 }
 
 .content ul li > span {
@@ -209,11 +209,28 @@ h1 {
 }
 
 .content ul li span.title {
-    padding: 0 10px 0 10px;
-    font-size: 20px;
+    /*padding: 0 10px 0 10px;*/
+    font-size: 16px;
     font-weight: bold;
-    display: inline;
+    display: inline-block;
+    float: left;
 }
+.content ul li span.excerpt {
+	font-size: 12px;
+	font-weight: normal;
+	color: #C0C9C8;
+}
+.content ul li span.date {
+	font-size: 8px;
+	float: left;
+	text-align: center;
+	margin-right: 20px;
+}
+
+.content ul li span.date span.date-day {
+	font-weight: bold;
+}
+
 
 .content ul li div.itemLabel {
     float: left;
@@ -229,8 +246,8 @@ h1 {
 
 .content ul li a span.disclosure_indicator {
     background: url('/public/images/iphone/disclosure.png') no-repeat center right;
-    height: 25px;
-    width: 35px;
+    height: 40px;
+    width: 13px;
     float: right;
     margin-right: 10px;
     display: inline;
